@@ -9,6 +9,7 @@ class SiteController
      */
     public function actionIndex()
     {
-        header("Location: /user/login");
+        header("Location: user/login");
+        return true;
     }
 }

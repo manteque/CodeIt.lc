@@ -1,6 +1,6 @@
 <?php
 return array(
-    // Пользователь:
+   // Пользователь:
     'user/register' => 'user/register',
     'user/login' => 'user/login',
     'user/logout' => 'user/logout',
@@ -8,4 +8,5 @@ return array(
     // Главная страница
     'index.php' => 'site/index', 
     '' => 'site/index', 
+
 );

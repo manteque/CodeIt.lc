@@ -6,9 +6,9 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <title>Главная</title>
-        <link href="/template/css/bootstrap.min.css" rel="stylesheet">
-        <link href="/template/css/font-awesome.min.css" rel="stylesheet">
-        <link href="/template/css/main.css" rel="stylesheet">    
+        <link href="../template/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../template/css/font-awesome.min.css" rel="stylesheet">
+        <link href="../template/css/main.css" rel="stylesheet">    
 
         <!--[if lt IE 9]>
         <script src="js/html5shiv.js"></script>
@@ -30,10 +30,10 @@
                                 <ul class="nav navbar-nav">
                                     
                                     <?php if (User::isGuest()): ?>                                        
-                                        <li><a href="/user/login"><i class="fa fa-lock"></i> Вход</a></li>
+                                        <li><a href="../user/login"><i class="fa fa-lock"></i> Вход</a></li>
                                     <?php else: ?>
-                                        <li><a href="/cabinet"><i class="fa fa-user"></i> Аккаунт</a></li>
-                                        <li><a href="/user/logout"><i class="fa fa-unlock"></i> Выход</a></li>
+                                        <li><a href="../user/cabinet"><i class="fa fa-user"></i> Аккаунт</a></li>
+                                        <li><a href="../user/logout"><i class="fa fa-unlock"></i> Выход</a></li>
                                     <?php endif; ?>
                                 </ul>
                           

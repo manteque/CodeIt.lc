@@ -27,7 +27,7 @@
                         </label>
                         <p><input type="submit" name="submit" class="btn btn-default" value="Вход" /></p>
                     </form>
-                    <p><a href="/user/register">Регистрация</a></p>
+                    <p><a href="../user/register">Регистрация</a></p>
                 </div><!--/sign up form-->
 
             </div>

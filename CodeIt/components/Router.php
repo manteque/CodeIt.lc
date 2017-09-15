@@ -26,6 +26,7 @@ class Router
     private function getURI()
     {
         if (!empty($_SERVER['REQUEST_URI'])) {
+           // echo $_SERVER['REQUEST_URI'];
             return trim($_SERVER['REQUEST_URI'], '/');
         }
     }
@@ -40,15 +41,13 @@ class Router
         foreach ($this->routes as $uriPattern => $path) {
             // Сравниваем $uriPattern и $uri
             if (preg_match("~$uriPattern~", $uri)) {
-                // Получаем внутренний путь из внешнего согласно правилу.
-                
+               // Получаем внутренний путь из внешнего согласно правилу.
                 $internalRoute = preg_replace("~$uriPattern~", $path, $uri);
-
                 // Определить контроллер, action, параметры
-                $segments = array_slice(explode('/', $internalRoute), -2);
-                $controllerName = array_shift($segments) . 'Controller';
+                $segments = explode('/', $internalRoute);
+                $actionName = 'action' . ucfirst(array_pop($segments));
+                $controllerName = array_pop($segments) . 'Controller';
                 $controllerName = ucfirst($controllerName);
-                $actionName = 'action' . ucfirst(array_shift($segments));
                 $parameters = $segments;
                 // Подключить файл класса-контроллера
                 $controllerFile = ROOT . '/controllers/' .

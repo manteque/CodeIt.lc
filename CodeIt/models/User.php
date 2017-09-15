@@ -100,7 +100,7 @@ class User
         if (isset($_SESSION['user'])) {
             return $_SESSION['user'];
         }
-        header("Location: /user/login");
+        header("Location: /CodeIt/user/login");
     }
     /**
      * Проверяет является ли пользователь гостем

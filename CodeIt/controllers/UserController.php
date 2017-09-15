@@ -74,7 +74,7 @@ class UserController
 
                 User::auth($userId);
                 // Перенаправляем пользователя в закрытую часть - кабинет 
-                header("Location: /cabinet");
+                header("Location: ../user/cabinet");
             }
         }
         // Подключаем вид
@@ -115,7 +115,7 @@ class UserController
                     // Если данные правильные, запоминаем пользователя (сессия)
                     User::auth($userId);
                     // Перенаправляем пользователя в закрытую часть - кабинет 
-                    header("Location: /cabinet");
+                    header("Location: ../user/cabinet");
                 }
             }
         }
@@ -124,6 +124,21 @@ class UserController
         return true;
     }
     /**
+     * Action для страницы "Кабинет пользователя"
+     */
+    public function actionCabinet()
+    {
+        // Получаем идентификатор пользователя из сессии
+        $userId = User::checkLogged();
+        // Получаем информацию о пользователе из БД
+        $user = User::getUserById($userId);
+        // Подключаем вид
+        require_once(ROOT . '/views/user/cabinet.php');
+        return true;
+    }
+
+
+    /**
      * Удаляем данные о пользователе из сессии
      */
     public function actionLogout()
@@ -131,6 +146,7 @@ class UserController
         // Удаляем информацию о пользователе из сессии
         unset($_SESSION["user"]);
         // Перенаправляем пользователя на главную страницу
-        header("Location: /user/login");
+        require_once(ROOT . '/views/user/login.php');
+        return true;
     }
 }

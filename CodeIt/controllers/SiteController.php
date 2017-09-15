@@ -1,6 +1,6 @@
 <?php
 /**
- * Контроллер CartController
+ * Контроллер SiteController
  */
 class SiteController
 {
@@ -9,7 +9,6 @@ class SiteController
      */
     public function actionIndex()
     {
-        header("Location: user/login");
-        return true;
+        header("Location: ../".PART."/user/login");
     }
 }
